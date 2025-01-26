@@ -1,0 +1,146 @@
+[
+    {
+      "id": 1,
+      "question": "Welche Grüsse werden traditionell während des Frühlingsfestes verwendet?",
+      "options": {
+        "A": "Friedliches Qingming-Fest (qīng míng ān kāng)",
+        "B": "Gesundheit und Wohlstand zum Drachenbootfest (duān wǔ ān kāng)",
+        "C": "Frohes Mittherbstfest (zhōng qiū kuài lè)",
+        "D": "Viel Glück und Wohlstand (gōng xǐ fā cái)"
+      },
+      "correctAnswer": ["D"],
+      "type": "single"
+    },
+    {
+      "id": 2,
+      "question": "Mehrfachauswahl: Welche der folgenden Speisen sind typisch für das Frühlingsfest?",
+      "options": {
+        "A": "Teigtaschen (jiǎo zi)",
+        "B": "Reiskuchen (nián gāo)",
+        "C": "Fisch (yú)",
+        "D": "Klebreisbällchen (tāng yuán)"
+      },
+      "correctAnswer": ["A", "B", "C", "D"],
+      "type": "multiple"
+    },
+    {
+      "id": 3,
+      "question": "Welche Farbe wird traditionell für Dekorationen während des Frühlingsfestes verwendet?",
+      "options": {
+        "A": "Lila",
+        "B": "Rot",
+        "C": "Gelb",
+        "D": "Grün"
+      },
+      "correctAnswer": ["B"],
+      "type": "single"
+    },
+    {
+      "id": 4,
+      "question": "Welche Geschenke erhalten Kinder traditionell während des Frühlingsfestes?",
+      "options": {
+        "A": "Süssigkeiten",
+        "B": "Spielzeuge",
+        "C": "Rote Umschläge",
+        "D": "Feuerwerkskörper"
+      },
+      "correctAnswer": ["C"],
+      "type": "single"
+    },
+    {
+      "id": 5,
+      "question": "Was befindet sich normalerweise in den roten Umschlägen?",
+      "options": {
+        "A": "Geld",
+        "B": "Neujahrsgrusskarten",
+        "C": "Ein ungeratztes Rubbellos",
+        "D": "Das beste Foto des letzten Jahres"
+      },
+      "correctAnswer": ["A"],
+      "type": "single"
+    },
+    {
+      "id": 6,
+      "question": "Warum muss beim Neujahrsfestessen Fisch serviert werden?",
+      "options": {
+        "A": "Wegen des Nährwerts",
+        "B": "Traditionelle Sitte",
+        "C": "Yú (Fisch) bedeutet auch Überfluss",
+        "D": "Günstiger Preis"
+      },
+      "correctAnswer": ["C"],
+      "type": "single"
+    },
+    {
+      "id": 7,
+      "question": "Warum werden während des Frühlingsfestes Feuerwerkskörper gezündet?",
+      "options": {
+        "A": "Für die festliche Atmosphäre",
+        "B": "Um den Mammon zu willkommen",
+        "C": "Um das Nian-Monster zu vertreiben",
+        "D": "Um die Ernte zu feiern"
+      },
+      "correctAnswer": ["C"],
+      "type": "single"
+    },
+    {
+      "id": 8,
+      "question": "Mehrfachauswahl: Wovor hatte das Nian-Monster in der Geschichte Angst?",
+      "options": {
+        "A": "Helles Licht",
+        "B": "Rot",
+        "C": "Geräusche",
+        "D": "Der Geschmack von leckerem Essen"
+      },
+      "correctAnswer": ["A", "B", "C"],
+      "type": "multiple"
+    },
+    {
+      "id": 9,
+      "question": "Mehrfachauswahl: Was vermeidet man traditionell während des Frühlingsfestes?",
+      "options": {
+        "A": "Dinge zerbrechen",
+        "B": "Unglückliche Worte sagen",
+        "C": "Geld leihen",
+        "D": "Haare schneiden"
+      },
+      "correctAnswer": ["A", "B", "C", "D"],
+      "type": "multiple"
+    },
+    {
+      "id": 10,
+      "question": "Welche Dekoration hängt man normalerweise während des Frühlingsfestes an die Tür?",
+      "options": {
+        "A": "Frühlingspaarreime",
+        "B": "Laternen",
+        "C": "Chinesische Knoten",
+        "D": "Feuerwerkskörper"
+      },
+      "correctAnswer": ["A"],
+      "type": "single"
+    },
+    {
+      "id": 11,
+      "question": "Welcher traditionelle Tanz wird während des Frühlingsfestes aufgeführt?",
+      "options": {
+        "A": "Pfauentanz",
+        "B": "Bambusstangentanz",
+        "C": "Platztanz",
+        "D": "Löwentanz"
+      },
+      "correctAnswer": ["D"],
+      "type": "single"
+    },
+    {
+      "id": 12,
+      "question": "Welches Fest markiert das Ende des chinesischen Frühlingsfestes?",
+      "options": {
+        "A": "Laternenfest",
+        "B": "Drachenbootfest",
+        "C": "Qingming-Fest",
+        "D": "Qixi-Fest"
+      },
+      "correctAnswer": ["A"],
+      "type": "single"
+    }
+  ]  
