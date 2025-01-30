@@ -3,7 +3,7 @@
         <p v-if="timeLeft > 0" class="timeleft">
             <img
                 class="timer__icon"
-                :src="require('@/assets/timer.png')" 
+                :src="require('@/assets/timer.svg')" 
                 alt="Eine Uhr, die die verbleibende Zeit anzeigt"
             >
             <span class="timer__container">{{ formattedTime }}</span></p>
@@ -76,5 +76,17 @@
     width: 1.75rem;
     height: 1.75rem;
     margin-inline-end: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+    .countdown__timer {
+        font-size: 1.25rem;
+    }
+    .timer__container {
+        font-size: 1.25rem;
+    }
+    .timer__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 }
 </style>

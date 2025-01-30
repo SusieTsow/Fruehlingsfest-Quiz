@@ -40,8 +40,13 @@ export default {
 }
 .base__button:hover {
     color: #F26B5E;
-    background-color: #FEF6F5;
-    box-shadow: inset 0 0 0 3px #F26B5E;  /* inner border */
+    background-color: #FBDBD8;
+      /* inner border */
+}
+.base__button:disabled {
+    background-color: #FBDBD8;
+    color: #FEF6F5;
+    cursor: not-allowed;
 }
 </style>
 

@@ -3,7 +3,7 @@
     <div class="home__img">
       <img
         class="home__img" 
-        :src="require('@/assets/cover.png')" 
+        :src="require('@/assets/cover.svg')" 
         alt="Chinesisches Neujahrsbild mit 'Fu' (Glück), Goldbarren und dem Hinweis auf das Jahr der Schlange (2025)">
     </div>
     <div class="home__content">
@@ -11,7 +11,7 @@
       <p class="home__description">
       Das chinesische Frühlingsfest ist viel mehr als nur ein Neujahrsfest! Bist du bereit, dein Wissen zu testen? Hier kommen 12 spannende Fragen: mal schauen, wie gut du dich auskennst!
       </p>
-      <BaseButton class="start__btn" @click="startQuiz">Loslegen</BaseButton>
+      <BaseButton class="start__btn" @click="startQuiz" label="Loslegen" />
     </div>
   </div>
 </template>
@@ -87,7 +87,11 @@ export default {
     margin-bottom: 1.5rem;
   }
   .start__btn {
-    align-self: center;
+    margin-inline: auto;
+    left: 0;
+    right: 0;
+    position:absolute;
+    bottom: 5rem;
   }
 }
 

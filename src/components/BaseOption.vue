@@ -50,12 +50,18 @@ export default {
     background-color: #fffbfa;
     color: #262626;
     box-shadow: none;
+    cursor: pointer;
 }
 .option.selected {
     background-color: #FBDBD8;
     border: #F9C9C5 2px solid;
     color:  hsl(0, 0%, 60%);
     box-shadow: none;
+}
+@media screen and (max-width: 768px) {
+    .option {
+        font-size: 1rem;
+    }
 }
 
 </style>

@@ -14,26 +14,34 @@
             />
         </div>
         
-        <div class="question__container">
-            <p class="question__title">{{ currentQuestionData.question }}</p>
-            <div class="options__container">
-                <BaseOption
-                    v-for="(option, key) in currentQuestionData.options"
-                    :key="key"
-                    :label="key + '. ' + option"
-                    :value="key"
-                    :isSelected="selectedOptions.includes(key)"
-                    @select="toggleOption"
+        <BlockResult
+            v-if="showBlockResult"
+            :isCorrect="currentAnswerCorrect"
+            :correctAnswer="currentQuestionData.correctAnswer"
+            :options="currentQuestionData.options"
+            @next="goToNextQuestion"
+        />
+        <div v-else>
+            <div class="question__container">
+                <p class="question__title">{{ currentQuestionData.question }}</p>
+                <div class="options__container">
+                    <BaseOption
+                        v-for="(option, key) in currentQuestionData.options"
+                        :key="`${currentQuestion}-${key}`"
+                        :label="key + '. ' + option"
+                        :value="key"
+                        :isSelected="selectedOptions.includes(key)"
+                        @select="toggleOption"
+                    />
+                </div>
+            </div>
+            <div class="confirm__btn">
+                <BaseButton 
+                    :disabled="!canConfirm" 
+                    @click="confirmAnswer"
+                    label="Bestätigen"
                 />
             </div>
-        </div>
-        <div class="confirm__btn">
-            <BaseButton 
-                :disabled="!canConfirm" 
-                @click="confirmAnswer"
-            >
-                Bestätigen
-            </BaseButton>
         </div>
     </div>
 </template>
@@ -42,6 +50,7 @@
 import BaseButton from './BaseButton.vue';
 import BaseOption from './BaseOption.vue';
 import CountdownTimer from './CountdownTimer.vue';
+import BlockResult from './BlockResult.vue';
 import questions from '@/assets/quiz.json';
 
 export default ({
@@ -49,7 +58,8 @@ export default ({
     components: {
         BaseButton,
         BaseOption,
-        CountdownTimer
+        CountdownTimer,
+        BlockResult,
     },
     data() {
         return {
@@ -63,6 +73,9 @@ export default ({
             
             selectedOptions: [],
             totalQuestions: 12,
+
+            showBlockResult: false,
+            currentAnswerCorrect: false,
         };
     },
     computed: {
@@ -87,7 +100,6 @@ export default ({
             this.goToResults();
         },
         toggleOption(key) {
-            // Option switching logic to handle single and multiple choices
             if (this.currentQuestionData.type === 'single') {
                 this.selectedOptions = [key];
             } else {
@@ -101,19 +113,26 @@ export default ({
         },
         confirmAnswer() {
             const correctAnswers = this.currentQuestionData.correctAnswer;
-            const isCorrect = this.isAnswerCorrect(correctAnswers, this.selectedOptions);
+            this.currentAnswerCorrect = this.isAnswerCorrect(correctAnswers, this.selectedOptions);
 
-            if (isCorrect) {
+            if (this.currentAnswerCorrect) {
                 this.correctAnswers++;
             } else {
                 this.incorrectAnswers++;
             }
 
+            this.showBlockResult = true;
+        },
+        resetOptions() {
             this.selectedOptions = [];
-            this.currentQuestionIndex++;
-
+            this.showBlockResult = false;
+        },
+        goToNextQuestion() {
+            this.resetOptions();
+            
             if (this.currentQuestion < this.questions.length - 1) {
                 this.currentQuestion++;
+                this.currentQuestionIndex++;
             } else {
                 this.goToResults();
             }
@@ -132,8 +151,11 @@ export default ({
                     correct: this.correctAnswers,
                     incorrect: this.incorrectAnswers,
                 },
-            }
-            )},
+            });
+        },
+    },
+    created() {
+        this.resetOptions();
     },
 });
 </script>
@@ -144,7 +166,7 @@ export default ({
     font-size: 1.5rem;
     align-items: flex-start;
     text-align: start;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .quiz__title {
     font-size: clamp(2rem, 4.5vw, 6rem);
@@ -194,19 +216,26 @@ export default ({
 }
 .confirm__btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
+    .quiz__score__container {
+        font-size: 1.25rem;
+    }
     .quiz__container {
         padding: 3rem 5rem;
     }
+    .question__title {
+        font-size: 1.25rem;
+        padding-inline: 1rem;
+    }
     .confirm__btn {
-        display: flex;
-        justify-content: flex-end;
+        margin-inline: auto;
+        left: 0;
+        right: 0;
         position:absolute;
-        bottom: 2rem;
-        right:2rem;
+        bottom: 5rem;
     }
 }
 
